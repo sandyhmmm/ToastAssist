@@ -1,0 +1,36 @@
+<h1>My Details:</h1>
+
+<table class = "table">
+<tr>
+<td>Name:</td><td> ${memberTable.name}</td>
+</tr>
+<tr>
+<td>Login/email:</td><td> ${memberTable.email}</td>
+</tr>
+<tr>
+<td>Address:</td><td>${memberTable.addrL1}</td>
+</tr>
+</tr>
+<tr>
+<td>MemberShip Period:</td><td>${memberTable.membershipPeriod}</td>
+</tr>
+</tr>
+<tr>
+<td>Member Since:</td><td>${memberTable.memberSince}</td>
+</tr>
+</tr>
+<tr>
+<td>Status:</td><td>${memberTable.status}</td>
+</tr>
+<table>
+
+<h2>E-Board Positions </h2>
+<table class = "table">
+
+    #foreach($member in $memberTable.executiveComittee)
+<tr><td>
+        <p>${member.comitteeRoles.executiveComitteeRole}</p>
+</td></tr>
+    #end
+
+</table>

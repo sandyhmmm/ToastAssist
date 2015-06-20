@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0/EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/finalproject</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hbm2dll.auto">update</property>
+		<property name="hibernate.show_sql">true</property>	
+		
+		<mapping class="com.me.finalproject.pojo.MemberTable"/>
+		<mapping class="com.me.finalproject.pojo.Club"/>
+		<mapping class="com.me.finalproject.pojo.ExecutiveComittee"/>
+		<mapping class="com.me.finalproject.pojo.ExecutiveComitteeRoles"/>
+		<mapping class="com.me.finalproject.pojo.Meeting"/>
+		<mapping class="com.me.finalproject.pojo.TimerReport"/>
+		<mapping class="com.me.finalproject.pojo.GrammarianReport"/>
+		<mapping class="com.me.finalproject.pojo.AhCounterReport"/>
+		<mapping class="com.me.finalproject.pojo.EvaluatorReport"/>
+		<mapping class="com.me.finalproject.pojo.RoleRequest"/>
+		<mapping class="com.me.finalproject.pojo.Guest"/>
+		<mapping class="com.me.finalproject.pojo.CheckIn"/>
+		<mapping class="com.me.finalproject.pojo.RoleRequest"/>
+		<mapping class="com.me.finalproject.pojo.BalanceSheet"/>
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TM Check in</title>
+        <script>
+            var names = [];
+            var participatedNames = [];
+            function checkin()
+            {
+                var name = document.getElementById("atendeeName").value.toString();
+                names.push(name);
+                alert("Welcome to NUTM!!!");
+                document.getElementById("atendeeName").value = "";
+
+            }
+            function showAtendees()
+            {
+                document.getElementById("formCheckIn").innerHTML = "";
+                document.getElementById("formCheckIn").innerHTML = "Registered Names:" + names;
+                document.getElementById("divButton").innerHTML = "";
+            }
+            function randomName() {
+
+                var x = Math.floor((Math.random() * names.length));
+                document.getElementById("divName").innerHTML = names[x];
+                participatedNames.push(names[x]);
+                names.splice(x, 1);
+                document.getElementById("divButton").innerHTML = "";
+                document.getElementById("divButton").innerHTML = "Participants:" + participatedNames;
+
+            }
+        </script>
+        <style>
+            button {
+                display: inline-block;
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+                cursor: pointer;
+                padding: 10px 20px;
+                border: 1px solid #018dc4;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                font: normal 16px/normal "Times New Roman", Times, serif;
+                color: rgba(255,255,255,0.9);
+                -o-text-overflow: clip;
+                text-overflow: clip;
+                background: #0199d9;
+                -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+                box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+                text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+                -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+                -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+                -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+                transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+            }
+            input {
+                display: inline-block;
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+                padding: 10px 20px;
+                border: 1px solid #b7b7b7;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                font: normal 16px/normal "Times New Roman", Times, serif;
+                color: rgba(0,142,198,1);
+                -o-text-overflow: clip;
+                text-overflow: clip;
+                background: rgba(252,252,252,1);
+                -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+                box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+                text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+                -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+                -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+                -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+                transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+            }
+        </style>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div align="center" >
+            <image src="http://www.toastmasters.org/Leadership-Central/Logos-Images-and-Templates/~/media/4BDB0DB436004830BA1DB7780BC6B3A0.ashx" width="158" height="128"></image>
+            <div style="font-size: xx-large">
+                Northeastern University </br> Toastmasters Club
+            </div>
+            <div  id="divName" style="font-style: italic; font-size: 500%; color: #000099"></div>
+            </br>
+            </br>
+            <form id="formCheckIn">
+                <h1>Please Check in</h1>
+                <h2>Name:</h2><input type="text" name="atendeeName" id="atendeeName">
+            </form>
+            </br>
+
+            <div id="divButton">
+                <button name="checkIn" id="checkIn" onclick="checkin()" >Check In</button></br></br>
+                <button name="display" id="dislay" onclick="showAtendees()" >Complete Check-in</button></br></br>
+            </div>
+            <div>
+                <button name='pickName' id='pickName' onclick='randomName()' >Select Speaker</button>
+            </div>
+
+
+
+        </div>
+
+    </body>
+</html>
